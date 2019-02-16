@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo for bs3 js plugin</title>
+    <link rel="stylesheet" href="./bootstrap3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <br>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success btn-sm " data-toggle="modal" data-target="#myModal">
+        点击弹出静态框
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">添加学生</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" placeholder="请输入学生姓名" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <!-- 组件中的导航标签页使用JS来控制 -->
+    <ul class="nav nav-tabs nav-pills" id="myTabs">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+    <br>
+    <button class="btn btn-sm btn-info" id="ccbtn">点我</button>
+    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+            Single toggle
+          </button>
+    <script src="./jquery-1.12.4.js"></script>
+    <script src="./bootstrap3.3.7/js/bootstrap.min.js"></script>
+    <script>
+            // $("#myTabs a").click(function(e){
+            //     e.preventDefault()
+            //     $(this).tab('show')
+            // })
+            $("#myTabs a").on('click',function(e){
+                e.preventDefault()
+                $(this).tab('show')
+            })
+            $('#ccbtn').on('click',function(){
+                var $btn = $(this).button('loading')
+                // business logic...
+                setTimeout(function(){
+                    $btn.button('reset')
+                },1000)
+                
+            })
+        </script>
+</body>
+
+</html>
